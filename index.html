@@ -20,17 +20,20 @@
 /* Layout: single editorial column with a ledger-style margin of mono labels; navy/gold/teal from her existing brand banner */
 :root{
   --bg:#f6f7fb; --surface:#ffffff; --ink:#14203a; --muted:#56607a; --line:#d9deea;
-  --navy:#1b2b52; --gold:#b8862b; --teal:#0f7c7a; --chip:#eef1f8;
+  --navy:#1b2b52; --gold:#902bb8; --teal:#1b2b52; --chip:#eef1f8;
+  --chart-in:#b5671d; --chart-out:#167a75; --chart-stock:#cbd8d2; --chart-spend:#526ea8;
   --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
   --f-body:"Newsreader", Georgia, "Times New Roman", serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0e1526; --surface:#151f36; --ink:#e8ecf5; --muted:#9aa5bf; --line:#27334f;
-  --navy:#9fb4e8; --gold:#e2b45a; --teal:#4cc3bd; --chip:#1c2742; color-scheme:dark}}
+  --navy:#9fb4e8; --gold:#e2b45a; --teal:#4cc3bd; --chip:#1c2742;
+  --chart-in:#e2b45a; --chart-out:#4cc3bd; --chart-stock:#425b58; --chart-spend:#9fb4e8; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0e1526; --surface:#151f36; --ink:#e8ecf5; --muted:#9aa5bf; --line:#27334f;
-  --navy:#9fb4e8; --gold:#e2b45a; --teal:#4cc3bd; --chip:#1c2742; color-scheme:dark}
+  --navy:#9fb4e8; --gold:#e2b45a; --teal:#4cc3bd; --chip:#1c2742;
+  --chart-in:#e2b45a; --chart-out:#4cc3bd; --chart-stock:#425b58; --chart-spend:#9fb4e8; color-scheme:dark}
 
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:19px;line-height:1.6}
 .wrap{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
@@ -57,6 +60,10 @@ h1 em{font-style:normal;color:var(--gold)}
 .forecast svg{width:100%;height:auto;display:block;margin-top:10px}
 .forecast .legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:6px}
 .sw{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px}
+.sw.sell-in{background:var(--chart-in)}
+.sw.sell-out{background:var(--chart-out)}
+.sw.inventory{height:10px;width:10px;background:var(--chart-stock);border-radius:2px}
+.sw.marketing{height:10px;width:10px;background:var(--chart-spend);border-radius:2px}
 .forecast .note{font-size:15px;color:var(--muted);margin:10px 0 0;font-style:italic}
 @media (prefers-reduced-motion:no-preference){
   .draw{stroke-dasharray:600;stroke-dashoffset:0;animation:draw 1.6s ease-out both}
@@ -132,7 +139,7 @@ footer{padding-top:28px;font-family:var(--f-mono);font-size:12px;color:var(--mut
 <body>
 <div class="wrap">
   <nav>
-    <div class="mark">Joanna Navarro<span>.</span></div>
+    <div class="mark">Bready Studios by Joanna Navarro<span>.</span></div>
     <div class="links">
       <a href="#professional">Professional</a><a href="#personal">Personal</a><a href="#contact">Contact</a>
     </div>
@@ -140,26 +147,48 @@ footer{padding-top:28px;font-family:var(--f-mono);font-size:12px;color:var(--mut
 
   <header class="hero">
     <div>
-      <div class="eyebrow">Data analytics · Commercial operations · Dubai</div>
-      <h1>Numbers that<br>people can <em>act on.</em></h1>
-      <p class="lede">I build the forecasts, reports and automations that keep commercial teams honest. <i>On weekends, I bake pandesal for half of Discovery Gardens.</i></p>
+      <div class="eyebrow">Web Catalog · Ordering System · Business and Data analytics · Commercial operations</div>
+      <h1>Tools that<br>people can <em>rely on.</em></h1>
+      <p class="lede">I like to study process, systems and data not just for display and presentations, but use it as a tool for driving business and achieve its goal and vision.</i></p>
     </div>
-    <figure class="forecast" aria-label="Illustrative chart of actual sales against forecast">
-      <div class="hd"><span>Sell-out vs forecast</span><span>wk 1–12</span></div>
-      <svg viewBox="0 0 300 150" role="img" aria-label="Illustrative line chart: actuals tracking a forecast band">
-        <g stroke="var(--line)" stroke-width="1">
-          <line x1="20" y1="20" x2="290" y2="20"/><line x1="20" y1="60" x2="290" y2="60"/>
-          <line x1="20" y1="100" x2="290" y2="100"/><line x1="20" y1="130" x2="290" y2="130"/>
+    <aside class="forecast" aria-label="Monthly sales and inventory chart">
+      <div class="hd"><span>Monthly volume</span><span>Units / Spend ($k)</span></div>
+      <svg viewBox="0 0 460 210" role="img" aria-labelledby="sales-chart-title sales-chart-desc">
+        <title id="sales-chart-title">Sell-in, sell-out, inventory and marketing spend by month</title>
+        <desc id="sales-chart-desc">Illustrative January to June data. Sell-in and sell-out are lines measured in units. Inventory and marketing spend are bars; spend uses the right axis in thousands of dollars.</desc>
+        <g fill="none" stroke="var(--line)" stroke-width="1">
+          <path d="M42 36H414M42 67H414M42 98H414M42 129H414M42 160H414"/>
         </g>
-        <path d="M20 108 L44 100 L69 96 L93 90 L118 80 L142 76 L167 66 L191 60 L216 52 L240 46 L265 38 L290 32 L290 52 L265 58 L240 64 L216 70 L191 78 L167 84 L142 94 L118 98 L93 108 L69 114 L44 118 L20 124 Z" fill="var(--teal)" opacity=".14"/>
-        <path class="draw" d="M20 116 L44 109 L69 105 L93 99 L118 89 L142 85 L167 75 L191 69 L216 61 L240 55 L265 48 L290 42" fill="none" stroke="var(--teal)" stroke-width="2" stroke-dasharray="4 4"/>
-        <path class="draw" d="M20 118 L44 112 L69 101 L93 104 L118 92 L142 80 L167 78 L191 66 L216 63 L240 50" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="240" cy="50" r="4.5" fill="var(--gold)"/>
-        <text x="246" y="44" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink)">today</text>
+        <g fill="var(--muted)" font-family="var(--f-mono)" font-size="10" text-anchor="end">
+          <text x="36" y="39">800</text><text x="36" y="70">600</text>
+          <text x="36" y="101">400</text><text x="36" y="132">200</text><text x="36" y="163">0</text>
+        </g>
+        <g fill="var(--chart-spend)" font-family="var(--f-mono)" font-size="10" text-anchor="start">
+          <text x="420" y="39">$80</text><text x="420" y="70">$60</text>
+          <text x="420" y="101">$40</text><text x="420" y="132">$20</text><text x="420" y="163">$0</text>
+        </g>
+        <g fill="var(--chart-stock)">
+          <rect x="52" y="104" width="10" height="56" rx="2"/><rect x="116" y="95" width="10" height="65" rx="2"/>
+          <rect x="180" y="99" width="10" height="61" rx="2"/><rect x="244" y="79" width="10" height="81" rx="2"/>
+          <rect x="308" y="87" width="10" height="73" rx="2"/><rect x="372" y="73" width="10" height="87" rx="2"/>
+        </g>
+        <g fill="var(--chart-spend)">
+          <rect x="64" y="101" width="10" height="59" rx="2"/><rect x="128" y="89" width="10" height="71" rx="2"/>
+          <rect x="192" y="95" width="10" height="65" rx="2"/><rect x="256" y="70" width="10" height="90" rx="2"/>
+          <rect x="320" y="81" width="10" height="79" rx="2"/><rect x="384" y="61" width="10" height="99" rx="2"/>
+        </g>
+        <path d="M63 76L127 64L191 82L255 48L319 61L383 42" fill="none" stroke="var(--chart-in)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M63 84L127 75L191 70L255 66L319 53L383 52" fill="none" stroke="var(--chart-out)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <g fill="var(--chart-in)"><circle cx="63" cy="76" r="3"/><circle cx="127" cy="64" r="3"/><circle cx="191" cy="82" r="3"/><circle cx="255" cy="48" r="3"/><circle cx="319" cy="61" r="3"/><circle cx="383" cy="42" r="3"/></g>
+        <g fill="var(--chart-out)"><circle cx="63" cy="84" r="3"/><circle cx="127" cy="75" r="3"/><circle cx="191" cy="70" r="3"/><circle cx="255" cy="66" r="3"/><circle cx="319" cy="53" r="3"/><circle cx="383" cy="52" r="3"/></g>
+        <g fill="var(--muted)" font-family="var(--f-mono)" font-size="10" text-anchor="middle">
+          <text x="63" y="181">Jan</text><text x="127" y="181">Feb</text><text x="191" y="181">Mar</text>
+          <text x="255" y="181">Apr</text><text x="319" y="181">May</text><text x="383" y="181">Jun</text>
+        </g>
       </svg>
-      <div class="legend"><span><i class="sw" style="background:var(--gold)"></i>Actual</span><span><i class="sw" style="background:var(--teal)"></i>Forecast + band</span></div>
-      <p class="note">Illustrative. The kind of view I build so a planning meeting starts with the answer.</p>
-    </figure>
+      <div class="legend"><span><i class="sw sell-in"></i>Sell-in</span><span><i class="sw sell-out"></i>Sell-out</span><span><i class="sw inventory"></i>Inventory</span><span><i class="sw marketing"></i>Marketing spend ($k)</span></div>
+      <p class="note">Illustrative monthly data · Spend axis in $1,000s</p>
+    </aside>
   </header>
 
   <div class="part" id="professional">
@@ -170,7 +199,7 @@ footer{padding-top:28px;font-family:var(--f-mono);font-size:12px;color:var(--mut
   <section id="about">
     <div class="label"><b>01</b>About</div>
     <div>
-      <h2>Twelve years making UAE and GCC operations measurable.</h2>
+      <h2>10 years making UAE and GCC operations measurable.</h2>
       <p>I've spent my career between finance, supply chain and systems: planning cycles, KPI reporting, EDI and ERP flows, and the audit work that keeps them clean. My best work happens where a manual process meets a deadline, and I get to replace the spreadsheet scramble with something that runs on its own.</p>
       <p>I studied Mathematics and Computer Science, and I still think like both: get the logic right, then make it fast.</p>
       <div class="facts">
