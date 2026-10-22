@@ -47,6 +47,7 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-
 nav .links{display:flex;gap:18px;flex-wrap:wrap}
 nav a{color:var(--muted);text-decoration:none}
 nav a:hover{color:var(--ink)}
+nav a.keep{color:var(--gold)}
 .mark{font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:0;text-transform:none;color:var(--ink)}
 .mark span{color:var(--gold)}
 
@@ -149,7 +150,7 @@ footer{padding-top:28px;font-family:var(--f-mono);font-size:12px;color:var(--mut
   section{grid-template-columns:1fr;gap:12px;padding-block:44px}
   .work,.work.two,.offclock{grid-template-columns:1fr}
   .bakery,.tool-groups,.role{grid-template-columns:1fr;gap:12px}
-  nav .links{display:none}
+  nav .links a:not(.keep){display:none}
   body{font-size:18px}
 }
 </style>
@@ -159,7 +160,7 @@ footer{padding-top:28px;font-family:var(--f-mono);font-size:12px;color:var(--mut
   <nav>
     <div class="mark">Bready Web Studios by Joanna Navarro<span>.</span></div>
     <div class="links">
-      <a href="#professional">Professional</a><a href="#personal">Personal</a><a href="#contact">Contact</a>
+      <a href="#professional">Professional</a><a href="#personal">Personal</a><a class="keep" href="pricing.html">Web design pricing</a><a href="#contact">Contact</a>
     </div>
   </nav>
 
