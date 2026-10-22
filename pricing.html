@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website Packages &amp; Pricing | Bready Web Studios Dubai</title>
+<meta name="description" content="Website packages for Dubai and UAE businesses from AED 700: one-page sites, WhatsApp catalog websites, and online ordering or booking systems with a staff admin.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Packages &amp; Pricing | Bready Web Studios">
+<meta property="og:description" content="Fixed-price websites for UAE businesses from AED 700.">
+<meta name="theme-color" content="#1b2b52">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b52'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23e2b45a'%3EJN%3C/text%3E%3C/svg%3E">
+<style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;-webkit-font-smoothing:antialiased}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: price-tag rows — three packages as a menu board, add-ons as a receipt, care plans side by side */
+/* Matches the main site palette and type */
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --ink:#14203a; --muted:#56607a; --line:#d9deea;
+  --accent:#902bb8; --accent-ink:#ffffff; --deep:#1b2b52; --deep-fg:#f6f7fb; --mark:#e2b45a;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1526; --surface:#151f36; --ink:#e8ecf5; --muted:#9aa5bf; --line:#27334f;
+  --accent:#e2b45a; --accent-ink:#14203a; --deep:#1c2742; --deep-fg:#e8ecf5; --mark:#e2b45a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1526; --surface:#151f36; --ink:#e8ecf5; --muted:#9aa5bf; --line:#27334f;
+  --accent:#e2b45a; --accent-ink:#14203a; --deep:#1c2742; --deep-fg:#e8ecf5; --mark:#e2b45a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto;padding-block:56px 72px;display:grid;gap:72px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header{display:grid;gap:16px;max-width:680px}
+header h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+header h1 mark{background:linear-gradient(transparent 58%,var(--mark) 58%);color:inherit;padding:0 .1em}
+header p{color:var(--muted);font-size:1.1rem;max-width:60ch}
+
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.pkg{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:20px;min-width:0}
+.pkg.featured{background:var(--deep);color:var(--deep-fg);border-color:var(--deep)}
+.pkg.featured .muted,.pkg.featured li{color:color-mix(in srgb,var(--deep-fg) 78%,transparent)}
+.pkg-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pkg h3{font-size:1.4rem;font-weight:700}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:4px 8px;border-radius:999px}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price .from{font-size:13px;color:var(--muted)}
+.pkg.featured .price .from{color:color-mix(in srgb,var(--deep-fg) 70%,transparent)}
+.price .amt{font-family:var(--display);font-weight:800;font-size:2.6rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price .cur{font-family:var(--mono);font-size:14px}
+.muted{color:var(--muted)}
+.was{font-size:1.1rem;color:var(--muted);text-decoration-thickness:2px}
+.save{font-size:12px;border:1px solid var(--accent);border-radius:999px;padding:2px 8px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;border-block:1px dashed var(--line);padding-block:10px}
+.pkg.featured .meta{border-color:color-mix(in srgb,var(--deep-fg) 25%,transparent)}
+ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+li{padding-left:22px;position:relative;font-size:15px}
+li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:2px;background:var(--accent)}
+.example{font-size:13px}
+
+.section-head{display:grid;gap:8px;margin-bottom:24px}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700}
+
+.receipt{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px 28px;max-width:720px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:14px;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.row .what{min-width:0}
+.row .what small{display:block;color:var(--muted);font-size:13px}
+.row .num{white-space:nowrap;font-size:15px}
+
+.care{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px}
+.care .pkg .amt{font-size:2rem}
+
+.terms{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:2px solid var(--ink);padding-top:24px}
+.terms div{display:grid;gap:6px;min-width:0}
+.terms h3{font-size:1rem;font-weight:700}
+.terms p{font-size:14px;color:var(--muted)}
+
+.cta{background:var(--accent);color:var(--accent-ink);border-radius:14px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800}
+.cta p{max-width:52ch}
+.btn{display:inline-block;background:var(--accent-ink);color:var(--accent);font-weight:600;text-decoration:none;padding:14px 22px;border-radius:10px}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+@media (max-width:900px){.packages{grid-template-columns:1fr}.terms{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.care{grid-template-columns:1fr}.terms{grid-template-columns:1fr}.receipt{padding:4px 18px}.pkg{padding:22px}}
+
+.topnav{max-width:1080px;margin:0 auto;padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.topnav a{color:var(--muted);text-decoration:none}.topnav a:hover{color:var(--ink)}
+.topnav .brand{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.topnav .brand span{color:var(--accent)}
+.sitefoot{max-width:1080px;margin:0 auto;padding-block:0 40px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="brand" href="index.html">Bready Web Studios<span>.</span></a>
+  <a href="index.html">&larr; Home</a>
+</nav>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Bready Web Studios · Dubai</span>
+    <h1>Websites for local businesses, <mark>priced up front</mark></h1>
+    <p>Fixed packages in AED for restaurants, salons, home businesses and shops across the UAE. Every site is mobile-first, fast, and built so your customers can message, order or book in a few taps.</p>
+  </header>
+
+  <section aria-labelledby="pk">
+    <div class="section-head"><span class="eyebrow">Packages</span><h2 id="pk">Pick the site your business needs</h2></div>
+    <div class="packages">
+      <article class="pkg">
+        <div class="pkg-head"><h3>Starter</h3><span class="tag">Promo</span></div>
+        <p class="muted">A one-page site that gets you found and gets you messages.</p>
+        <div class="price"><s class="was num" aria-label="Was AED 749">749</s><span class="amt">700</span><span class="cur">AED</span><span class="save num">Save AED 49</span></div>
+        <div class="meta"><span>1 page</span><span>5–7 days</span><span>2 revisions</span></div>
+        <ul>
+          <li>About, services or menu highlights, hours and location</li>
+          <li>WhatsApp, call and Instagram buttons</li>
+          <li>Google Maps directions link</li>
+          <li>Mobile-first design, basic SEO setup</li>
+          <li>Free hosting setup, connected to your domain</li>
+        </ul>
+        <p class="example muted">Good for: home businesses, freelancers, new launches</p>
+      </article>
+
+      <article class="pkg featured">
+        <div class="pkg-head"><h3>Catalog</h3><span class="tag">Most popular</span></div>
+        <p class="muted">Your full menu or product range online, with enquiries straight to WhatsApp.</p>
+        <div class="price"><span class="amt">1,499</span><span class="cur">AED</span></div>
+        <div class="meta"><span>Up to 5 pages</span><span>10–14 days</span><span>2 revisions</span></div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Catalog with categories, photos and prices (up to 50 items)</li>
+          <li>"Order on WhatsApp" button that sends the chosen items</li>
+          <li>Gallery, reviews and FAQ sections</li>
+          <li>Google Business Profile link and on-page SEO</li>
+        </ul>
+        <p class="example muted">Good for: restaurants, bakeries, cafés, retail shops</p>
+      </article>
+
+      <article class="pkg">
+        <div class="pkg-head"><h3>Orders &amp; Bookings</h3></div>
+        <p class="muted">A customer site plus a staff admin to manage every order or appointment.</p>
+        <div class="price"><span class="from">from</span><span class="amt">2,999</span><span class="cur">AED</span></div>
+        <div class="meta"><span>Site + admin</span><span>3–4 weeks</span><span>3 revisions</span></div>
+        <ul>
+          <li>Everything in Catalog</li>
+          <li>Online ordering cart or appointment booking form</li>
+          <li>Private staff admin: approve, prioritise and update status</li>
+          <li>Edit your own menu, prices and availability</li>
+          <li>Secure database for orders, bookings and customers</li>
+        </ul>
+        <p class="example muted">Good for: takeaways, salons, clinics, service businesses</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="ad">
+    <div class="section-head"><span class="eyebrow">Add-ons</span><h2 id="ad">Add what you need</h2></div>
+    <div class="receipt">
+      <div class="row"><div class="what">Extra page</div><span class="num">AED 125</span></div>
+      <div class="row"><div class="what">Arabic version<small>Full bilingual site with English / عربي switch</small></div><span class="num">AED 450</span></div>
+      <div class="row"><div class="what">Extra catalog items<small>Per 5 items, with photos and prices entered for you</small></div><span class="num">AED 100</span></div>
+      <div class="row"><div class="what">Logo design<small>2 concepts, 2 revisions, files for print and social</small></div><span class="num">AED 250</span></div>
+      <div class="row"><div class="what">Google Business Profile setup<small>Listing, photos, hours and categories</small></div><span class="num">AED 150</span></div>
+      <div class="row"><div class="what">SEO optimization<small>Keyword research, page titles and descriptions, Google Search Console setup</small></div><span class="num">AED 150</span></div>
+      <div class="row"><div class="what">Domain registration<small>Your .com or .ae domain, registered and connected to your site</small></div><span class="num">AED 200</span></div>
+      <div class="row"><div class="what">Rush delivery<small>Starter or Catalog delivered in half the time</small></div><span class="num">+30%</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cp">
+    <div class="section-head"><span class="eyebrow">After launch</span><h2 id="cp">Care plans</h2><p class="muted">Optional. Cancel any month.</p></div>
+    <div class="care">
+      <article class="pkg">
+        <h3>Keep it running</h3>
+        <div class="price"><span class="amt">75</span><span class="cur">AED / month</span></div>
+        <ul>
+          <li>Hosting, SSL and uptime monitoring</li>
+          <li>Up to 2 small edits a month (text, prices, photos)</li>
+          <li>Reply within 2 working days</li>
+        </ul>
+      </article>
+      <article class="pkg">
+        <h3>Keep it growing</h3>
+        <div class="price"><span class="amt">149</span><span class="cur">AED / month</span></div>
+        <ul>
+          <li>Everything in Keep it running</li>
+          <li>Up to 6 edits a month, including menu and seasonal promos</li>
+          <li>Monthly visitor report and one improvement suggestion</li>
+          <li>Same-day reply on working days</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="terms" aria-label="How it works">
+    <div><h3>50% to start</h3><p>Deposit books your slot. The balance is due before the site goes live.</p></div>
+    <div><h3>You own it</h3><p>Your domain, content and site are yours once paid in full.</p></div>
+    <div><h3>Clear revisions</h3><p>Each package includes set revision rounds. Extra changes are quoted before work starts.</p></div>
+    <div><h3>Your content</h3><p>You send logo, photos and text. Need help writing it? We can draft it with you.</p></div>
+  </section>
+
+  <section class="cta">
+    <div><h2>Not sure which one fits?</h2><p>Send a message with your business name and what you want customers to do on the site. You'll get a fixed quote within a day.</p></div>
+    <a class="btn" href="#contact">Get a quote</a>
+  </section>
+</div>
+<footer class="sitefoot"><span>Bready Web Studios · Dubai, UAE</span><span>Prices in AED</span></footer>
+</body>
+</html>
