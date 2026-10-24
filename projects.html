@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website Projects | Bready Web Studios</title>
+<meta name="description" content="Explore websites built by Bready Web Studios, including the Always Bready bakery website and ordering experience.">
+<meta name="theme-color" content="#1b2b52">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b52'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23e2b45a'%3EJN%3C/text%3E%3C/svg%3E">
+<style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;-webkit-font-smoothing:antialiased}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f6f7fb;--surface:#fff;--ink:#14203a;--muted:#56607a;--line:#d9deea;
+  --navy:#1b2b52;--accent:#902bb8;--chip:#eef1f8;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1526;--surface:#151f36;--ink:#e8ecf5;--muted:#9aa5bf;--line:#27334f;
+  --navy:#9fb4e8;--accent:#e2b45a;--chip:#1c2742;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1526;--surface:#151f36;--ink:#e8ecf5;--muted:#9aa5bf;--line:#27334f;
+  --navy:#9fb4e8;--accent:#e2b45a;--chip:#1c2742;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.6}
+a{color:var(--navy);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font:500 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.topnav a{color:var(--muted);text-decoration:none}
+.topnav a:hover{color:var(--ink)}
+.brand{font:800 18px var(--display)!important;letter-spacing:0;text-transform:none}
+.brand span{color:var(--accent)}
+.hero{padding:72px 0 38px;border-bottom:1px solid var(--line)}
+.eyebrow,.label{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance}
+h1{max-width:800px;margin:12px 0 18px;font-size:clamp(42px,7vw,76px);font-weight:800;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:56ch;margin:0;color:var(--muted);font-size:clamp(19px,2vw,22px)}
+.project{padding-top:32px}
+.project-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+.project-head h2{margin:6px 0 0;font-size:clamp(25px,4vw,36px);letter-spacing:-.025em}
+.project-url{font:500 13px var(--mono);color:var(--muted)}
+.preview{overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 56px rgb(20 32 58 / 12%)}
+.browserbar{display:flex;align-items:center;gap:12px;min-height:48px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+.dots{display:flex;gap:5px;flex:none}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.address{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid var(--line);border-radius:6px;padding:3px 10px;color:var(--muted);font:400 11px var(--mono)}
+.open{flex:none;font:500 11px var(--mono);text-decoration:none}
+.frame{height:min(72vw,720px);min-height:400px;background:var(--surface)}
+.frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+.details{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:32px;padding:28px 4px 0}
+.details h2{margin:0 0 10px;font-size:clamp(25px,3vw,34px)}
+.details p{max-width:62ch;margin:0;color:var(--muted)}
+.stack{display:flex;align-content:start;gap:8px;flex-wrap:wrap}
+.stack span{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--chip);font:400 11px var(--mono);color:var(--muted)}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:58px;padding-top:20px;border-top:1px solid var(--line);font:400 12px var(--mono);color:var(--muted)}
+footer a{color:inherit}
+@media(max-width:700px){
+ .hero{padding:52px 0 30px}
+ .frame{height:68vh;min-height:360px}
+ .details{grid-template-columns:1fr;gap:20px}
+ footer{margin-top:40px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="brand" href="index.html">Bready Web Studios<span>.</span></a>
+    <a href="index.html">&larr; Home</a>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Selected work · Website design and development</div>
+    <h1>Built for real life.<br><em>Made to work.</em></h1>
+    <p class="lede">A live look at a website built for a real small business, pairing a welcoming storefront with practical online ordering.</p>
+  </header>
+
+  <article class="project" aria-labelledby="always-bready-title">
+    <div class="project-head">
+      <div>
+        <div class="label">01 · Food and beverage · Dubai</div>
+        <h2 id="always-bready-title">Always Bready</h2>
+      </div>
+      <span class="project-url">alwaysbready.me</span>
+    </div>
+    <div class="preview">
+      <div class="browserbar" aria-hidden="true">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="address">https://alwaysbready.me</span>
+        <a class="open" href="https://alwaysbready.me" target="_blank" rel="noopener noreferrer" aria-label="Open Always Bready website in a new tab">Open ↗</a>
+      </div>
+      <div class="frame">
+        <iframe src="https://alwaysbready.me/" title="Live preview of the Always Bready bakery website" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen"></iframe>
+      </div>
+    </div>
+    <div class="details">
+      <div>
+        <h2>From a home bakery to an online storefront.</h2>
+        <p>Always Bready serves fresh Filipino breads in Dubai. The website brings its menu, delivery information and online ordering experience together, with a layout that works on mobile and desktop.</p>
+      </div>
+      <div class="stack" aria-label="Project capabilities">
+        <span>Responsive website</span><span>Online ordering</span><span>Inventory controls</span><span>Small business</span>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <span>Bready Web Studios · Dubai, UAE</span>
+    <a href="pricing.html">Website packages and pricing</a>
+  </footer>
+</main>
+</body>
+</html>
