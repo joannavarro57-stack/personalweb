@@ -10,7 +10,7 @@
 <style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;-webkit-font-smoothing:antialiased}img{max-width:100%}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
   --bg:#f6f7fb;--surface:#fff;--ink:#14203a;--muted:#56607a;--line:#d9deea;
@@ -42,11 +42,11 @@ h1 em{font-style:normal;color:var(--accent)}
 .lede{max-width:56ch;margin:0;color:var(--muted);font-size:clamp(19px,2vw,22px)}
 .projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:28px}
 .project-card{min-height:220px;display:grid;place-items:center;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 32px rgb(20 32 58 / 6%)}
+a.project-card{transition:transform .2s,box-shadow .2s,border-color .2s}
+a.project-card:hover,a.project-card:focus-visible{transform:translateY(-3px);box-shadow:0 16px 40px rgb(20 32 58 / 12%);border-color:#c9b48a}
 .project-card img{display:block;width:min(100%,180px);aspect-ratio:1;object-fit:contain}
 .project-card img.wide{width:min(100%,220px);aspect-ratio:2/1}
-.polybelle{display:grid;justify-items:center;line-height:1;text-align:center}
-.polybelle b{font:italic 600 clamp(34px,4.6vw,48px) "Cormorant Garamond",Georgia,serif;color:#2b211d}
-.polybelle small{margin-top:8px;font:500 11px var(--mono);letter-spacing:.32em;text-transform:uppercase;color:#77551f}
+.project-card img.logo-wide{width:min(100%,240px);aspect-ratio:auto;height:auto}
 footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:58px;padding-top:20px;border-top:1px solid var(--line);font:400 12px var(--mono);color:var(--muted)}
 footer a{color:inherit}
 @media(max-width:700px){
@@ -73,17 +73,16 @@ footer a{color:inherit}
   </header>
 
   <section class="projects" aria-label="Project logos">
-    <div class="project-card"><img src="Logo.jpeg" alt="Always Bready"></div>
-    <div class="project-card"><span class="polybelle" role="img" aria-label="Polybelle"><b>Polybelle</b><small>Events</small></span></div>
-    <div class="project-card"><img src="images/clients/arbab-kebab.jpg" alt="Arbab Kebab"></div>
-    <div class="project-card"><img class="wide" src="images/clients/febys.png" alt="Feby's"></div>
-    <div class="project-card"><img src="images/clients/reece-music.jpg" alt="Reece Music"></div>
-    <div class="project-card"><img class="wide" src="images/clients/big-motors.png" alt="Big Motors Co."></div>
+    <a class="project-card" href="https://alwaysbready.me" target="_blank" rel="noopener noreferrer" aria-label="Visit the Always Bready website (opens in a new tab)"><img src="Logo.jpeg" alt="Always Bready"></a>
+    <a class="project-card" href="https://www.polybelle.me" target="_blank" rel="noopener noreferrer" aria-label="Visit the Polybelle website (opens in a new tab)"><img class="logo-wide" src="images/clients/polybelle.png" alt="Polybelle Events Hall &amp; Studio"></a>
+    <a class="project-card" href="https://arbabkebab.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Arbab Kebab website (opens in a new tab)"><img src="images/clients/arbab-kebab.jpg" alt="Arbab Kebab"></a>
+    <a class="project-card" href="https://febys.vercel.app/?preview=febys-preview" target="_blank" rel="noopener noreferrer" aria-label="Visit the Feby's website (opens in a new tab)"><img class="wide" src="images/clients/febys.png" alt="Feby's"></a>
+    <a class="project-card" href="https://reecemusic.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the Reece Music website (opens in a new tab)"><img src="images/clients/reece-music.jpg" alt="Reece Music"></a>
+    <a class="project-card" href="https://bigmotorsco.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Big Motors Co. website (opens in a new tab)"><img class="wide" src="images/clients/big-motors.png" alt="Big Motors Co."></a>
   </section>
 
   <footer>
     <span>Bready Web Studios · Dubai, UAE</span>
-    <a href="pricing.html">Website packages and pricing</a>
   </footer>
 </main>
 </body>
