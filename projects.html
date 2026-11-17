@@ -5,73 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Selected Projects | Bready Web Studios</title>
 <meta name="description" content="Selected projects from Bready Web Studios: Always Bready, Polybelle, Arbab Kebab, Feby's, Reece Music and Big Motors Co..">
-<meta name="theme-color" content="#1b2b52">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b52'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23e2b45a'%3EJN%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#16151a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2316151a'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23dccdf0'%3EJN%3C/text%3E%3C/svg%3E">
 <style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;-webkit-font-smoothing:antialiased}img{max-width:100%}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Overpass:wght@400;600;800&family=Overpass+Mono:wght@400;600&display=swap">
 <style>
+/* Layout: workshop-label system shared with index.html. Palette: black structure, neutral grays, one violet accent with a lavender highlight wash */
 :root{
-  --bg:#f6f7fb;--surface:#fff;--ink:#14203a;--muted:#56607a;--line:#d9deea;
-  --navy:#1b2b52;--accent:#902bb8;--chip:#eef1f8;
-  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
-  --body:"Newsreader",Georgia,"Times New Roman",serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#efeff1;--panel:#fafafa;--ink:#16151a;--muted:#55535c;--line:#16151a;--grid:rgba(22,21,26,.06);
+  --accent:#4b2380;--onaccent:#ffffff;--hl:#dccdf0;--onhl:#16151a;--tape:#16151a;--tapeink:#efeff1;
+  --foot:#16151a;--onfoot:#efeff1;--shadow:#4b2380;
+  --display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;
+  --body:"Overpass","Helvetica Neue",Arial,sans-serif;
+  --mono:"Overpass Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0e1526;--surface:#151f36;--ink:#e8ecf5;--muted:#9aa5bf;--line:#27334f;
-  --navy:#9fb4e8;--accent:#e2b45a;--chip:#1c2742;color-scheme:dark}}
+  --bg:#121214;--panel:#1b1b1f;--ink:#ececef;--muted:#a3a1ab;--line:#ececef;--grid:rgba(236,236,239,.05);--accent:#b597e6;--onaccent:#121214;--hl:#4a2a82;--onhl:#f3effa;--tape:#ececef;--tapeink:#121214;--foot:#2a292f;--onfoot:#ececef;--shadow:#b597e6;color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1526;--surface:#151f36;--ink:#e8ecf5;--muted:#9aa5bf;--line:#27334f;
-  --navy:#9fb4e8;--accent:#e2b45a;--chip:#1c2742;color-scheme:dark}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.6}
-a{color:var(--navy);text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
-.topnav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font:500 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.topnav a{color:var(--muted);text-decoration:none}
-.topnav a:hover{color:var(--ink)}
-.brand{font:800 18px var(--display)!important;letter-spacing:0;text-transform:none}
-.brand span{color:var(--accent)}
-.hero{padding:72px 0 38px;border-bottom:1px solid var(--line)}
-.eyebrow,.label{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance}
-h1{max-width:800px;margin:12px 0 18px;font-size:clamp(42px,7vw,76px);font-weight:800;letter-spacing:-.04em}
-h1 em{font-style:normal;color:var(--accent)}
-.lede{max-width:56ch;margin:0;color:var(--muted);font-size:clamp(19px,2vw,22px)}
-.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:28px}
-.project-card{min-height:220px;display:grid;place-items:center;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 32px rgb(20 32 58 / 6%)}
-a.project-card{transition:transform .2s,box-shadow .2s,border-color .2s}
-a.project-card:hover,a.project-card:focus-visible{transform:translateY(-3px);box-shadow:0 16px 40px rgb(20 32 58 / 12%);border-color:#c9b48a}
+  --bg:#121214;--panel:#1b1b1f;--ink:#ececef;--muted:#a3a1ab;--line:#ececef;--grid:rgba(236,236,239,.05);--accent:#b597e6;--onaccent:#121214;--hl:#4a2a82;--onhl:#f3effa;--tape:#ececef;--tapeink:#121214;--foot:#2a292f;--onfoot:#ececef;--shadow:#b597e6;color-scheme:dark}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:var(--ink);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;box-shadow:0 0 0 5px var(--bg)}
+.eyebrow,.tag{display:inline-block;background:var(--tape);color:var(--tapeink);font:600 11.5px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.13em;padding:2px 8px 1px;border-radius:2px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.25);white-space:normal;justify-self:start}
+.topnav{display:flex;justify-content:space-between;align-items:stretch;flex-wrap:wrap;background:var(--panel);border:2px solid var(--line);min-height:54px}
+.topnav a{display:flex;align-items:center;padding:0 16px;color:inherit;text-decoration:none;font:800 13.5px/1 var(--body);text-transform:uppercase;letter-spacing:.04em;border-left:1px solid var(--line)}
+.topnav a:hover{background:var(--hl);color:var(--onhl)}
+.topnav .brand{gap:2px;padding:8px 16px 8px 12px;border-left:0;border-right:2px solid var(--line);font:900 24px/1 var(--display)!important;letter-spacing:.01em}
+.topnav .brand:hover{background:none;color:var(--ink)}
+.brand .i{font-weight:900;background:var(--hl);color:var(--onhl);padding:1px 5px}
+.panel-hero{border:2px solid var(--line);background:var(--panel);padding:32px 30px}
+h1,h2,h3{text-wrap:balance}
+h1{font:900 clamp(44px,6.4vw,88px)/.92 var(--display);text-transform:uppercase;margin:16px 0 18px}
+h1 em,h1 mark{font-style:normal;background:var(--hl);color:var(--onhl);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sitefoot{padding:14px 18px;background:var(--foot);color:var(--onfoot);font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sitefoot a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 20px 48px}
+.hero{margin-top:22px}
+.lede{max-width:56ch;margin:0;color:var(--muted);font-size:18px}
+.sec-head{display:flex;align-items:center;gap:14px;margin:34px 0 14px}
+.sec-head h2{font:900 clamp(24px,2.6vw,32px)/1 var(--display);text-transform:uppercase;margin:0}
+.sec-head .r{flex:1;height:2px;background:var(--line)}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+/* logo tiles stay light in dark mode so client logos keep their own backgrounds */
+.project-card{min-height:220px;display:grid;place-items:center;padding:24px;background:#fafafa;border:2px solid var(--line);color:#16151a;text-decoration:none}
+a.project-card{transition:transform .15s,box-shadow .15s}
+a.project-card:hover,a.project-card:focus-visible{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--shadow),6px 6px 0 2px var(--line)}
 .project-card img{display:block;width:min(100%,180px);aspect-ratio:1;object-fit:contain}
 .project-card img.wide{width:min(100%,220px);aspect-ratio:2/1}
 .project-card img.logo-wide{width:min(100%,240px);aspect-ratio:auto;height:auto}
-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:58px;padding-top:20px;border-top:1px solid var(--line);font:400 12px var(--mono);color:var(--muted)}
-footer a{color:inherit}
+.sitefoot{margin-top:32px}
 @media(max-width:700px){
- .hero{padding:52px 0 30px}
+ .panel-hero{padding:26px 20px}
  .projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
  .project-card{min-height:180px;padding:18px}
- footer{margin-top:40px}
 }
 @media(max-width:420px){.projects{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){a.project-card{transition:none}}
 </style>
 </head>
 <body>
 <main class="wrap">
   <nav class="topnav" aria-label="Main navigation">
-    <a class="brand" href="index.html">Bready Web Studios<span>.</span></a>
+    <a class="brand" href="index.html"><span class="i">B</span>ready Web Studios</a>
     <a href="index.html">&larr; Home</a>
   </nav>
 
-  <header class="hero">
+  <header class="hero panel-hero">
     <div class="eyebrow">Selected work · Website design and development</div>
     <h1>Good work.<br><em>Good people.</em></h1>
     <p class="lede">A selection of businesses and brands I've worked with.</p>
   </header>
 
+  <div class="sec-head"><h2>Client sites</h2><div class="r"></div><span class="eyebrow">6 live</span></div>
   <section class="projects" aria-label="Project logos">
     <a class="project-card" href="https://alwaysbready.me" target="_blank" rel="noopener noreferrer" aria-label="Visit the Always Bready website (opens in a new tab)"><img src="Logo.jpeg" alt="Always Bready"></a>
     <a class="project-card" href="https://www.polybelle.me" target="_blank" rel="noopener noreferrer" aria-label="Visit the Polybelle website (opens in a new tab)"><img class="logo-wide" src="images/clients/polybelle.png" alt="Polybelle Events Hall &amp; Studio"></a>
@@ -81,8 +88,8 @@ footer a{color:inherit}
     <a class="project-card" href="https://bigmotorsco.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Big Motors Co. website (opens in a new tab)"><img class="wide" src="images/clients/big-motors.png" alt="Big Motors Co."></a>
   </section>
 
-  <footer>
-    <span>Bready Web Studios · Dubai, UAE</span>
+  <footer class="sitefoot">
+    <span>Bready Web Studios · Dubai, UAE</span><a href="pricing.html">Pricing</a>
   </footer>
 </main>
 </body>
