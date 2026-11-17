@@ -113,7 +113,19 @@ h1 em{font-style:normal;background:var(--hl);color:var(--onhl);padding:0 .08em;b
 .part h2{font:900 clamp(30px,4vw,52px)/1 var(--f-display);text-transform:uppercase;margin:0;order:1}
 .part .k{order:4}
 .part>div{flex-basis:100%}
-.part p{font:600 15px/1.5 var(--f-mono);color:var(--ink);margin:0;max-width:none;background:var(--panel);border:2px solid var(--line);padding:8px 14px}
+/* ticker: static boxed line by default; scrolls as a tape strip only when motion is allowed */
+.ticker{font:600 14px/1.5 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;margin:0;max-width:none;flex-basis:100%;background:var(--tape);color:var(--tapeink);border:2px solid var(--line);padding:8px 14px;overflow:hidden}
+.ticker .track{display:none}
+@media (prefers-reduced-motion:no-preference){
+  .ticker{padding-inline:0}
+  .ticker .say{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .ticker .track{display:flex;width:max-content;animation:ticker 40s linear infinite}
+  .ticker:hover .track{animation-play-state:paused}
+  .ticker .grp{display:flex;flex:none}
+  .ticker .grp span{white-space:nowrap;display:flex;align-items:center}
+  .ticker .grp span::after{content:"";width:8px;height:8px;background:var(--step-number);margin-inline:22px}
+  @keyframes ticker{to{transform:translateX(-50%)}}
+}
 
 /* sections as bordered panels with a label column */
 section{display:grid;grid-template-columns:200px minmax(0,1fr);background:var(--panel);border:2px solid var(--line);margin-top:16px}
@@ -272,7 +284,7 @@ footer a.subtle:hover{background:none;color:inherit;border-bottom-color:currentC
 
   <div class="part" id="professional">
     <div><div class="k">Part one</div><h2>Professional</h2></div>
-    <p>Corporate experience, projects and skills.</p>
+    <p class="ticker"><span class="say">Corporate experience, projects and skills.</span><span class="track" aria-hidden="true"><span class="grp"><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span></span><span class="grp"><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span><span>Corporate experience, projects and skills.</span></span></span></p>
   </div>
 
   <section id="about">
@@ -350,7 +362,7 @@ footer a.subtle:hover{background:none;color:inherit;border-bottom-color:currentC
   <div class="personal" id="personal">
   <div class="part">
     <div><div class="k">Part two</div><h2>Personal</h2></div>
-    <p>Websites I build, a small bakery, and the rest of my story.</p>
+    <p class="ticker"><span class="say">Websites I build, a small bakery, and the rest of my story.</span><span class="track" aria-hidden="true"><span class="grp"><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span></span><span class="grp"><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span><span>Websites I build, a small bakery, and the rest of my story.</span></span></span></p>
   </div>
 
   <section id="web">
