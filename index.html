@@ -20,7 +20,7 @@
 /* Layout: workshop-label system — grid-paper background, 2px black-bordered panels, condensed uppercase display, lavender highlighter marks, black "tape" labels and a single violet accent */
 :root{
   --bg:#efeff1; --panel:#fafafa; --surface:#fafafa; --ink:#16151a; --muted:#55535c; --line:#16151a;
-  --grid:rgba(22,21,26,.06); --accent:#4b2380; --onaccent:#ffffff; --hl:#dccdf0; --onhl:#16151a;
+  --grid:rgba(22,21,26,.26); --accent:#4b2380; --onaccent:#ffffff; --hl:#dccdf0; --onhl:#16151a;
   --tape:#16151a; --tapeink:#efeff1; --footer-bg:#16151a; --footer-ink:#efeff1; --chip:#efeff1;
   --tile:#fafafa; --tile-hover:#dccdf0;
   --step-navy:#16151a; --step-teal:#16151a; --step-end:#4b2380; --step-text:#fafafa; --step-end-text:#ffffff; --step-number:#c9b6ea;
@@ -31,13 +31,13 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#121214; --panel:#1b1b1f; --surface:#1b1b1f; --ink:#ececef; --muted:#a3a1ab; --line:#ececef;
-  --grid:rgba(236,236,239,.05); --accent:#b597e6; --onaccent:#121214; --hl:#4a2a82; --onhl:#f3effa;
+  --grid:rgba(236,236,239,.2); --accent:#b597e6; --onaccent:#121214; --hl:#4a2a82; --onhl:#f3effa;
   --tape:#ececef; --tapeink:#121214; --footer-bg:#2a292f; --footer-ink:#ececef; --chip:#121214;
   --step-navy:#ececef; --step-teal:#ececef; --step-end:#b597e6; --step-text:#121214; --step-end-text:#121214; --step-number:#6b4fa0;
   --chart-in:#ececef; --chart-out:#8e8c96; --chart-stock:#4a4852; --chart-spend:#b597e6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#121214; --panel:#1b1b1f; --surface:#1b1b1f; --ink:#ececef; --muted:#a3a1ab; --line:#ececef;
-  --grid:rgba(236,236,239,.05); --accent:#b597e6; --onaccent:#121214; --hl:#4a2a82; --onhl:#f3effa;
+  --grid:rgba(236,236,239,.2); --accent:#b597e6; --onaccent:#121214; --hl:#4a2a82; --onhl:#f3effa;
   --tape:#ececef; --tapeink:#121214; --footer-bg:#2a292f; --footer-ink:#ececef; --chip:#121214;
   --step-navy:#ececef; --step-teal:#ececef; --step-end:#b597e6; --step-text:#121214; --step-end-text:#121214; --step-number:#6b4fa0;
   --chart-in:#ececef; --chart-out:#8e8c96; --chart-stock:#4a4852; --chart-spend:#b597e6; color-scheme:dark}
@@ -112,7 +112,8 @@ h1 em{font-style:normal;background:var(--hl);color:var(--onhl);padding:0 .08em;b
 .part>div::after{content:"";flex:1 1 60px;height:2px;background:var(--line);order:3}
 .part h2{font:900 clamp(30px,4vw,52px)/1 var(--f-display);text-transform:uppercase;margin:0;order:1}
 .part .k{order:4}
-.part p{font:13px/1.5 var(--f-mono);color:var(--muted);margin:0;max-width:40ch;flex-basis:100%}
+.part>div{flex-basis:100%}
+.part p{font:600 15px/1.5 var(--f-mono);color:var(--ink);margin:0;max-width:none;background:var(--panel);border:2px solid var(--line);padding:8px 14px}
 
 /* sections as bordered panels with a label column */
 section{display:grid;grid-template-columns:200px minmax(0,1fr);background:var(--panel);border:2px solid var(--line);margin-top:16px}
